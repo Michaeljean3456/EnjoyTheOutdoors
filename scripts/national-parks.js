@@ -14,9 +14,7 @@ window.onload = function () {
 
 }
 
-function getlocationInDropdown(){
- 
-}
+  
 
 function populatestateTypelist() {
     for (let location of locationsArray) {
@@ -36,7 +34,17 @@ function populateParkTypelist() {
 }
 
 
+function parkBtnClicked(){
+    let selectedParkType = parkType.value;
+    let parks = nationalParksArray.filter(
+      (park) => park.LocationName.includes(selectedParkType)
+    );
+        
+  }
 
-function submitBtnClicked(){
-    
-}
+  function stateBtnClicked (){
+    let selectedState = stateList.value;
+    let states = nationalParksArray.filter(
+
+    )
+  }

@@ -12,8 +12,8 @@ body{
 }
 .forma{
     background-color: rgb(158, 236, 178);
-    width: 500px;
-    height: 250px;
+    width: fit-content;
+    height: fit-content;
     margin: 50px auto;
     padding: 15px;
     border-radius: 25px;
@@ -21,8 +21,8 @@ body{
 }
 .formb{
     background-color: rgb(158, 236, 178);
-    width: 500px;
-    height: 250px;
+    width: fit-content;
+    height: fit-content;
     padding: 15px;
     border-radius: 25px;
     display: inline-block;
