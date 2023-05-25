@@ -24,15 +24,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="moutain-info.html">Mountains Information</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
               </li>
             </ul>
           </div>
@@ -40,6 +31,33 @@
       </nav>
     </header>
     <main>
+      <h1>Mountains Search Page</h1>
+      <br>
+      <div class="container">
+        <div id="categorySelectionRow" class="row">
+          <div class="col">
+            <form class="forma">
+              <h3>Search By Mountain Name</h3>
+              <label for="mountainList">Park Location</label>
+              <select id="mountainList" name="mountainList">
+                <option>Select a Mountain</option>
+              </select>
+              <button id="submitBtn" type="button">Submit</button>
+              <br>
+              <div class="inputInfo" id="inputInfo">
+                <div class="row">
+                  <label for="mountainId">Mountain Name</label>
+                  <input id="mountainId" readonly>
+              </div><br>
+              <div class="row">
+                <label for="elevationId">Elevation</label>
+                <input id="elevationId" readonly>
+            </div><br>
+              <label for="descriptionId">Description</label>
+              <textarea class="form-control" id="descriptionId" rows="3"></textarea>
+              <br>
+              </div>
+            </form>
 
     </main>
     <footer>

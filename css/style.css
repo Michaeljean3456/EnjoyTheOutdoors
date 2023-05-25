@@ -1,8 +1,12 @@
 body{
     background-color: #c3ce86;
+    text-align: center;
 }
 .c-item{
     height: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 45px;
+    font-weight: 600;   
     
 }
 .c-img{
@@ -12,16 +16,16 @@ body{
 }
 .forma{
     background-color: rgb(158, 236, 178);
-    width: fit-content;
+    width: 500px;
     height: fit-content;
-    margin: 50px auto;
+
     padding: 15px;
     border-radius: 25px;
     display: inline-block;
 }
 .formb{
     background-color: rgb(158, 236, 178);
-    width: fit-content;
+    width: 500px;
     height: fit-content;
     padding: 15px;
     border-radius: 25px;
