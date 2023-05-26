@@ -1,5 +1,5 @@
 body{
-    background-color: #c3ce86;
+    background-color:#4b9b80;
     text-align: center;
 }
 .c-item{
@@ -18,7 +18,6 @@ body{
     background-color: rgb(158, 236, 178);
     width: 500px;
     height: fit-content;
-
     padding: 15px;
     border-radius: 25px;
     display: inline-block;
@@ -30,4 +29,12 @@ body{
     padding: 15px;
     border-radius: 25px;
     display: inline-block;
+}
+.about-item{
+    background-color: rgb(136, 194, 148);
+}
+.bar-items{
+    justify-content: center;
+    text-align: center;
+
 }
