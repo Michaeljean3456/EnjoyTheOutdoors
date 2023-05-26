@@ -29,7 +29,7 @@ function submitBtnClicked(){
     for(let mountain of mountains){
       mountainId.value = mountain.name;
       description.value = mountain.desc;
-      elevation.value = mountain.elevation;
+      elevation.value = mountain.elevation + " Ft";
     }
   }
   else{
