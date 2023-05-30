@@ -63,7 +63,7 @@ function displaySelectedState() {
   let selectedState = stateList.value;
   let result = "";
   let states = nationalParksArray.filter(
-    (park) => park.State === selectedState);
+    (park) => park.State == selectedState);
 
   if (states.length > 0) {
     for (let state of states) {
