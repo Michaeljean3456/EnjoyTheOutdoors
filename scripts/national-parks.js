@@ -29,10 +29,6 @@ function populateParkTypeList() {
   }
 }
 
-function clearOptions(selectElement) {
-  selectElement.innerHTML = "";
-}
-
 function buildParkInfo(park) {
   return (
     "Location: " +
