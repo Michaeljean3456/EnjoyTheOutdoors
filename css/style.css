@@ -1,7 +1,18 @@
 body{
-    background-color:#4b9b80;
+    background-color: rgb(33, 44, 33);
     text-align: center;
+    
 }
+.nav-bar{
+    font-weight: 900px;
+    background-color: black;
+}
+.nature-love{
+    text-decoration: green;
+
+    color: green;
+}
+
 .c-item{
     height: 500px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,25 +27,83 @@ body{
 }
 .forma{
     background-color: rgb(158, 236, 178);
-    width: 500px;
+    width: 550px;
     height: fit-content;
     padding: 15px;
     border-radius: 25px;
     display: inline-block;
+    margin-bottom: 20px;
+    
+ 
 }
 .formb{
     background-color: rgb(158, 236, 178);
-    width: 500px;
+    width: 550px;
     height: fit-content;
     padding: 15px;
     border-radius: 25px;
     display: inline-block;
+    margin-bottom: 20px;
 }
 .about-item{
     background-color: rgb(136, 194, 148);
 }
-.bar-items{
-    justify-content: center;
-    text-align: center;
-
+.contact-item{
+    background-color: rgb(158, 236, 178);
 }
+.inputInfo {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  select,
+  button {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  ul.inputInfo {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-style: unset;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .text-c {
+    background-color: black;
+  }
+  .text-b {
+    background-color: rgb(36, 53, 36);
+    color: black;
+  }

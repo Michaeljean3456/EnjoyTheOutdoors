@@ -1,85 +1,111 @@
 "use strict";
+
 const stateList = document.getElementById("stateList");
 const parkType = document.getElementById("parkType");
-const stateBtn = document.getElementById("stateBtn");
-const parkBtn = document.getElementById("parkBtn");
-
+const submitBtn = document.getElementById("submitBtn");
+const Answer = document.getElementById("Answer");
 
 window.onload = function () {
-    populatestateTypelist();
-    populateParkTypelist();
-    stateBtn.onclick = stateBtnClicked;
-    parkBtn.onclick = parkBtnClicked;
+  populateStateTypeList();
+  populateParkTypeList();
+  submitBtn.onclick = submitBtnClicked;
+};
+
+function populateStateTypeList() {
+  for (let location of locationsArray) {
+    let option = document.createElement("option");
+    option.text = location;
+    option.value = location;
+    stateList.appendChild(option);
+  }
 }
 
-  
+function populateParkTypeList() {
+  for (let park of parkTypesArray) {
+    let option = document.createElement("option");
+    option.text = park;
+    option.value = park;
+    parkType.appendChild(option);
+  }
+}
 
-function populatestateTypelist() {
-    for (let location of locationsArray) {
-        let option = document.createElement("option");
-        option.text = location;
-        option.value = location;
-        stateList.appendChild(option);
+function clearOptions(selectElement) {
+  selectElement.innerHTML = "";
+}
+
+function buildParkInfo(park) {
+  return (
+    "Location: " +
+    park.LocationName +
+    "<br>" +
+    "Address: " +
+    park.Address +
+    "<br>" +
+    "City: " +
+    park.City +
+    "<br>" +
+    "State: " +
+    park.State +
+    "<br>" +
+    "Zip Code: " +
+    park.ZipCode +
+    "<br>" +
+    "Phone Number: " +
+    park.Phone +
+    "<br>" +
+    "Fax Number: " +
+    park.Fax +
+    "<br>" +
+    "Visit: " +
+    park.Visit +
+    "<br>" +
+    "--------------------------------<br>"
+  );
+}
+
+function displaySelectedState() {
+  let selectedState = stateList.value;
+  let result = "";
+  let states = nationalParksArray.filter(
+    (park) => park.State === selectedState);
+
+  if (states.length > 0) {
+    for (let state of states) {
+      result += buildParkInfo(state);
     }
+  } else {
+    result = " ";
+  }
+  return result;
 }
-function populateParkTypelist() {
-    for (let parks of parkTypesArray) {
-        let option = document.createElement("option");
-        option.text = parks;
-        option.value = parks;
-        parkType.appendChild(option);
+
+function displaySelectedParkType() {
+  let selectedParkType = parkType.value;
+  let result = "";
+  let parks = nationalParksArray.filter((park) =>
+    park.LocationName.includes(selectedParkType)
+  );
+
+  if (parks.length > 0) {
+    for (let park of parks) {
+      result += buildParkInfo(park);
     }
-}
-
-
-function parkBtnClicked(){
-    let selectedParkType = parkType.value;
-    let parks = nationalParksArray.filter(
-      (park) => park.LocationName.includes(selectedParkType)
-    );
-        
-    if (parks.length > 0) {
-        for (let park of parks) {
-          document.getElementById("locationIdPark").value = park.LocationName;
-          document.getElementById("addressIdPark").value = park.Address;
-          document.getElementById("cityIdPark").value = park.City;
-          document.getElementById("stateIdPark").value = park.State;
-          document.getElementById("zipIdPark").value = park.ZipCode;
-          document.getElementById("phoneIdPark").value = park.Phone;
-        }
-        
-      }
-      else {
-        locationIdPark.value = "";
-       addressIdPark.value = "";
-        cityIdPark.value = "";
-        stateIdPark.value = "";
-        zipIdPark.value = "";
-        phoneIdPark.value = "";
-      }
+  } else {
+    result = " ";
   }
 
-  function stateBtnClicked (){
-    let selectedState = stateList.value;
-    let states = nationalParksArray.filter(
-      (park) => park.State == selectedState
-    );
-    if(states.length > 0){
-      for(let park of states){
-        document.getElementById("locationIdState").value = park.LocationName;
-        document.getElementById("addressIdState").value = park.Address;
-        document.getElementById("cityIdState").value = park.City;
-        document.getElementById("stateIdState").value = park.State;
-        document.getElementById("zipIdState").value = park.ZipCode;
-        document.getElementById("phoneIdState").value = park.Phone;
-      }
-    } 
-    else{
-      locationIdState.value = "";
-      addressIdState.value = "";
-      cityIdState.value = "";
-      stateIdState.value = "";
-      zipIdState.value = "";
-      phoneIdState.value = "";
-    }
-  }
+  return result;
+}
+
+function submitBtnClicked() {
+  Answer.innerHTML = "";
+
+  let stateResult = displaySelectedState();
+  let parkResult = displaySelectedParkType();
+  let result = stateResult + parkResult;
+
+  Answer.innerHTML = result;
+
+  stateList.value = "";
+  parkType.value = "";
+}

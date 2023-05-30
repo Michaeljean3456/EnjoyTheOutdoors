@@ -27,14 +27,14 @@ function submitBtnClicked(){
   );
   if (mountains.length > 0){
     for(let mountain of mountains){
-      mountainId.value = mountain.name;
-      description.value = mountain.desc;
-      elevation.value = mountain.elevation + " Ft";
+      mountainId.innerHTML = mountain.name;
+      description.innerHTML = mountain.desc;
+      elevation.innerHTML = mountain.elevation + " Ft";
     }
   }
   else{
-    mountainId.value = "";
-    description.value = "";
-    elevation.value = "";
+    mountainId.innerHTML = "";
+    description.innerHTML = "";
+    elevation.innerHTML = "";
   }
 }
